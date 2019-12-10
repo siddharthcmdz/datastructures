@@ -22,17 +22,17 @@ namespace ds
 		/**
 		* A storage for user inputs for Binary Search Tree nodes.
 		*/
-		class BSTinput
+		class BSTinputs
 		{
 		private:
 			std::vector<BSTuint> m_inputs;
 
 		public:
-			BSTinput();
+			BSTinputs();
 			void push(BSTuint nodeID);
 			void pop();
 			const BSTuintPtr getInputs(size_t& numInputs) const;
-			~BSTinput();
+			~BSTinputs();
 		};
 
 		/**
@@ -43,7 +43,7 @@ namespace ds
 			static BSTnodePtr insertRecursive(BSTnodePtr rootNode, BSTuint nodeID);
 
 		public:
-			static BSTnodePtr generateTree(const BSTinput& inputter);
+			static BSTnodePtr generateTree(const BSTinputs& inputter);
 		};
 
 		/**

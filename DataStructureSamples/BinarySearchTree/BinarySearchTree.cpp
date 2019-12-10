@@ -5,27 +5,27 @@ namespace ds
 {
 	namespace bst
 	{
-		BSTinput::BSTinput()
+		BSTinputs::BSTinputs()
 		{
 		}
 
-		const BSTuintPtr BSTinput::getInputs(size_t& numInputs) const
+		const BSTuintPtr BSTinputs::getInputs(size_t& numInputs) const
 		{
 			numInputs = m_inputs.size();
 			return (BSTuintPtr)m_inputs.data();
 		}
 
-		void BSTinput::push(BSTuint nodeID)
+		void BSTinputs::push(BSTuint nodeID)
 		{
 			m_inputs.push_back(nodeID);
 		}
 
-		void BSTinput::pop()
+		void BSTinputs::pop()
 		{
 			m_inputs.pop_back();
 		}
 
-		BSTinput::~BSTinput()
+		BSTinputs::~BSTinputs()
 		{
 		}
 
@@ -42,7 +42,7 @@ namespace ds
 			return rootNode;
 		}
 
-		BSTnodePtr BSTgenerator::generateTree(const BSTinput &inputter)
+		BSTnodePtr BSTgenerator::generateTree(const BSTinputs &inputter)
 		{
 			size_t numNodes;
 			BSTuint* nodeIDs = inputter.getInputs(numNodes);
