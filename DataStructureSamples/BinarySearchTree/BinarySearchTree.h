@@ -28,7 +28,9 @@ namespace ds
 			std::vector<BSTuint> m_inputs;
 
 		public:
-			BSTinput(BSTuint maxInputs);
+			BSTinput();
+			void push(BSTuint nodeID);
+			void pop();
 			const BSTuintPtr getInputs(size_t& numInputs) const;
 			~BSTinput();
 		};

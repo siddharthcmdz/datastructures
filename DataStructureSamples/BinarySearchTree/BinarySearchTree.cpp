@@ -5,15 +5,24 @@ namespace ds
 {
 	namespace bst
 	{
-		BSTinput::BSTinput(BSTuint maxInputs)
+		BSTinput::BSTinput()
 		{
-			m_inputs.resize(maxInputs);
 		}
 
 		const BSTuintPtr BSTinput::getInputs(size_t& numInputs) const
 		{
 			numInputs = m_inputs.size();
 			return (BSTuintPtr)m_inputs.data();
+		}
+
+		void BSTinput::push(BSTuint nodeID)
+		{
+			m_inputs.push_back(nodeID);
+		}
+
+		void BSTinput::pop()
+		{
+			m_inputs.pop_back();
 		}
 
 		BSTinput::~BSTinput()
