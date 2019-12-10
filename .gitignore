@@ -1,0 +1,13 @@
+
+DataStructureSamples/.vs/DataStructureSamples/v15/Browse.VC.opendb
+*.db
+DataStructureSamples/.vs/DataStructureSamples/v15/.suo
+*.ipch
+*.log
+*.obj
+*.lastbuildstate
+*.tlog
+*.idb
+*.pdb
+DataStructureSamples/Debug/BinarySearchTree.exe
+*.ilk
