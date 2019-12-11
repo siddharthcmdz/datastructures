@@ -4,8 +4,8 @@
 namespace ds
 {
 #define INVALID_ID ~0;
-	typedef unsigned int BSTuint;
-	typedef unsigned int* BSTuintPtr;
+	typedef unsigned int DSuint;
+	typedef unsigned int* DSuintPtr;
 
 	namespace bst
 	{
@@ -14,9 +14,15 @@ namespace ds
 
 		struct BSTnode
 		{
-			BSTuint id = INVALID_ID;
+			DSuint id = INVALID_ID;
 			BSTnodePtr left = nullptr;
 			BSTnodePtr right = nullptr;
+		};
+
+		enum BSTinputType
+		{
+			Manual,
+			Auto
 		};
 
 		/**
@@ -25,13 +31,14 @@ namespace ds
 		class BSTinputs
 		{
 		private:
-			std::vector<BSTuint> m_inputs;
+			std::vector<DSuint> m_inputs;
+			BSTinputType m_inputType;
 
 		public:
-			BSTinputs();
-			void push(BSTuint nodeID);
+			BSTinputs(const BSTinputType& inputType, DSuint numNodes);
+			void push(DSuint nodeID);
 			void pop();
-			const BSTuintPtr getInputs(size_t& numInputs) const;
+			const DSuintPtr getInputs(size_t* numInputs = nullptr) const;
 			~BSTinputs();
 		};
 
@@ -40,10 +47,16 @@ namespace ds
 		*/
 		class BSTgenerator
 		{
-			static BSTnodePtr insertRecursive(BSTnodePtr rootNode, BSTuint nodeID);
+			static BSTnodePtr insertRecursive(BSTnodePtr rootNode, DSuint nodeID);
 
 		public:
 			static BSTnodePtr generateTree(const BSTinputs& inputter);
+		};
+		
+		enum BSTtraversalType {
+			InOrder,
+			PreOrder,
+			PostOrder
 		};
 
 		/**
@@ -51,8 +64,13 @@ namespace ds
 		*/
 		class BSTformatter
 		{
+		private:
+			static void visitInorder(const BSTnodePtr node);
+			static void visitPostorder(const BSTnodePtr node);
+			static void visitPreOrder(const BSTnodePtr node);
+
 		public:
-			static void formatPrint(const BSTnodePtr node);
+			static void formatPrint(const BSTnodePtr node, const BSTtraversalType& traversalType);
 		};
 
 	}
