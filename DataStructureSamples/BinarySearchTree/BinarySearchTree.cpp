@@ -79,6 +79,17 @@ namespace ds
 			return rootNode;
 		}
 
+		void BSTgenerator::disposeTree(BSTnodePtr node)
+		{
+			if (node == nullptr) return;
+
+			disposeTree(node->left);
+			disposeTree(node->right);
+
+			delete node;
+			node = nullptr;
+		}
+
 		void BSTformatter::visitInorder(const BSTnodePtr node)
 		{
 			if (node == nullptr) return;

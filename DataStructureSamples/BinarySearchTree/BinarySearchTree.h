@@ -51,6 +51,7 @@ namespace ds
 
 		public:
 			static BSTnodePtr generateTree(const BSTinputs& inputter);
+			static void disposeTree(BSTnodePtr node);
 		};
 		
 		enum BSTtraversalType {

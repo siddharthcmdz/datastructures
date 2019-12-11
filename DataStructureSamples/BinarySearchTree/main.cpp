@@ -47,6 +47,9 @@ int main(int argc, char* argv[])
 
 	}
 
+	std::cout << "Tree disposed .." << std::endl;
+	BSTgenerator::disposeTree(rootNode);
+
 	getchar();
 
 	return 0;
