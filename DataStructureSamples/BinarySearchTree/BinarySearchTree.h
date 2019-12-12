@@ -42,15 +42,24 @@ namespace ds
 			~BSTinputs();
 		};
 
+		enum BSTgenerationType
+		{
+			Recursive,
+			Iterative
+		};
+
 		/**
 		* A factory to generate Binary Search Trees.
 		*/
 		class BSTgenerator
 		{
 			static BSTnodePtr insertRecursive(BSTnodePtr rootNode, DSuint nodeID);
+			static BSTnodePtr insertIterative(BSTnodePtr rootNode, DSuint nodeID);
+			static BSTnodePtr genRecursive(const BSTinputs& inputter);
+			static BSTnodePtr genIterative(const BSTinputs& inpuuter);
 
 		public:
-			static BSTnodePtr generateTree(const BSTinputs& inputter);
+			static BSTnodePtr generateTree(const BSTinputs& inputter, const BSTgenerationType& genTpe);
 			static void disposeTree(BSTnodePtr node);
 		};
 		

@@ -25,7 +25,8 @@ int main(int argc, char* argv[])
 		std::cout << std::endl << std::endl;
 	}
 
-	BSTnodePtr rootNode = BSTgenerator::generateTree(inputs);
+	BSTgenerationType genType = BSTgenerationType::Iterative;
+	BSTnodePtr rootNode = BSTgenerator::generateTree(inputs, genType);
 
 	//write traversal outputs to console.
 	{
